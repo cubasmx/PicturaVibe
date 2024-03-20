@@ -126,12 +126,9 @@ Vue.js (framework front-end).
 # Recursos:
 
 Plataformas de pago online como PayPal.
-# Recomendaciones:
+# Recomendaciones que se me han hecho:
 
-Establecer un cronograma realista: Define fechas límite para cada tarea y asegúrate de que sean alcanzables.
-Comunicación constante con tus hermanos: Manténlos informados sobre el progreso del proyecto y asegúrate de que estén alineados con las decisiones que se toman.
-Utilizar herramientas de colaboración: Plataformas como Trello o Github pueden facilitar el trabajo en equipo.
-Ser flexible y adaptable: Es probable que surjan imprevistos durante el desarrollo, por lo que es importante ser flexible y adaptable a los cambios.
+Establecer un cronograma realista: Define fechas límite para cada tarea y asegúrate de que sean alcanzables. Comunicación constante con mis hermanos: Mantenerlos informados sobre el progreso del proyecto y asegurarme de que estén alineados con las decisiones que se toman. Utilizar herramientas de colaboración: Plataformas como Trello o Github pueden facilitar el trabajo en equipo. Ser flexible y adaptable: Es probable que surjan imprevistos durante el desarrollo, por lo que es importante ser flexible y adaptable a los cambios. Uno de las peticiones es poder utilizar frameworks para el frontend y el backend. Estaba pensando en Vue.Js y en Node.Js
 # Consideraciones adicionales:
 
 Escalabilidad: La plataforma debe poder escalar a medida que aumenta el número de usuarios.
