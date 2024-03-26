@@ -56,6 +56,10 @@ Galería de Inspiración: Una colección curada de obras destacadas y tendencias
 Explorar por Categorías: Secciones temáticas que permiten a los usuarios navegar y descubrir contenido específico, como pintura, fotografía, ilustración, arte digital, entre otros.
 ## Iniciar sesión:
 
+### Primero hay que iniciar sesión. 
+Vamos a hacer un pequeño ejercicio de PHP. Crearemos dos archivos PHP. El primero contendrá un formulario que pida los siguientes datos: nombre, correo electrónico, contraseña y fecha de naciminiento. El segundo mostrará los datos del usuario, cuanto tiempo ha pasado desde el último inicio de sesion y un botón de cerrar sesión. Tendremos que guardar los datos del usuaio en una sesion. Asimismo tendremos que guardar la fecha y la hora al momento de iniciar sesion en una cookie. 
+
+
 Perfil del Artista: Un espacio personalizado para que los usuarios carguen y compartan su propia obra, conecten con otros artistas y reciban feedback de la comunidad.
 Estudio Creativo: Herramientas de edición y funciones que permiten a los artistas mejorar y presentar su trabajo de manera única.
 ## Unirme:
