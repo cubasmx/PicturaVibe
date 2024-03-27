@@ -18,6 +18,11 @@
         <br>
         <label for="fecha_nacimiento">Fecha de nacimiento:</label>
         <input type="date" name="fecha_nacimiento" id="fecha_nacimiento" required>
+        <br>
+        <input type="radio" name="tema" value="claro" id="tema-claro">
+        <label for="tema-claro">Tema claro</label><br>
+        <input type="radio" name="tema" value="oscuro" id="tema-oscuro">
+        <label for="tema-oscuro">Tema oscuro</label><br>
         <br><br>
         <input type="submit" value="Enviar">
     </form>
