@@ -52,6 +52,9 @@ setcookie('ultima_sesion', $fecha_hora_actual, time() + 3600); // Expira en 1 ho
 
     <p>Tiempo desde el último inicio de sesión: <?php echo $tiempo_transcurrido; ?></p>
 
-    <a href="cerrar_sesion.php">Cerrar sesión</a>
+    <form action="cerrar_sesion.php" method="post">
+        <button type="submit">Cerrar sesión</button>
+    </form>
+
 </body>
 </html>
