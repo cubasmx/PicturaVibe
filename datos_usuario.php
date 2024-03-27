@@ -2,10 +2,26 @@
 session_start();
 
 // Guardar datos del formulario en la sesión
+
 $_SESSION['nombre'] = $_POST['nombre'];
 $_SESSION['correo'] = $_POST['correo'];
 $_SESSION['contrasena'] = $_POST['contrasena'];
 $_SESSION['fecha_nacimiento'] = $_POST['fecha_nacimiento'];
+$_SESSION['tema'] = $_POST['tema'];
+
+//Seleccionar tema
+
+// if (isset($_POST['tema'])) {
+//     $_SESSION['tema'] = $_POST['tema'];
+//   }
+
+if (isset($_SESSION['tema'])) {
+    $tema = $_SESSION['tema'];
+  } else {
+    $tema = "claro"; // Tema por defecto
+  }
+  
+  echo '<link rel="stylesheet" href="' . $tema . '.css">';
 
 // Obtener la fecha y hora actual para la cookie
 $fecha_hora_actual = date('Y-m-d H:i:s');

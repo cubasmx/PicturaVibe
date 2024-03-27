@@ -57,11 +57,104 @@ Explorar por Categorías: Secciones temáticas que permiten a los usuarios naveg
 ## Iniciar sesión:
 
 ### Primero hay que iniciar sesión. 
-Vamos a hacer un pequeño ejercicio de PHP. Crearemos dos archivos PHP. El primero contendrá un formulario que pida los siguientes datos: nombre, correo electrónico, contraseña y fecha de naciminiento. El segundo mostrará los datos del usuario, cuanto tiempo ha pasado desde el último inicio de sesion y un botón de cerrar sesión. Tendremos que guardar los datos del usuaio en una sesion. Asimismo tendremos que guardar la fecha y la hora al momento de iniciar sesion en una cookie. 
+Vamos a hacer un pequeño ejercicio de PHP. Creé dos archivos PHP. El primero contenía un formulario que pedía los siguientes datos: nombre, correo electrónico, contraseña y fecha de nacimiento. El segundo mostraba los datos del usuario, cuánto tiempo había pasado desde el último inicio de sesión y un botón de cerrar sesión. Tuve que guardar los datos del usuario en una sesión. Asimismo, tuve que guardar la fecha y la hora al momento de iniciar sesión en una cookie.
+
+### Implementar selección de tema en el formulario
+
+1. Añadir opciones de tema al formulario:
+
+En el formulario, agrega dos elementos de tipo radio con el nombre tema. Cada elemento debe tener un valor único que identifique el tema (por ejemplo, claro y oscuro). Puedes agregar etiquetas para que el usuario sepa qué opción representa cada tema.
+
+Ejemplo:
+
+HTML
+<form action="index.php" method="post">
+  <input type="radio" name="tema" value="claro" id="tema-claro">
+  <label for="tema-claro">Tema claro</label><br>
+  <input type="radio" name="tema" value="oscuro" id="tema-oscuro">
+  <label for="tema-oscuro">Tema oscuro</label><br>
+  <input type="submit" value="Iniciar sesión">
+</form>
+Use code with caution.
+
+2. Almacenar la selección del tema en la sesión:
+
+Al procesar el formulario, verifica el valor seleccionado en el campo tema y guarda esa información en la sesión usando $_SESSION['tema'].
+
+Ejemplo:
+
+PHP
+session_start();
+
+if (isset($_POST['tema'])) {
+  $_SESSION['tema'] = $_POST['tema'];
+}
+
+// Redirigir al usuario a la página principal o a otra página según sea necesario
+Use code with caution.
+
+3. Cargar la hoja de estilo correcta:
+
+En la página principal (o en cualquier página donde se quiera aplicar el tema), verifica el valor de $_SESSION['tema'] y carga la hoja de estilo correspondiente.
+
+Ejemplo:
+
+PHP
+session_start();
+
+if (isset($_SESSION['tema'])) {
+  $tema = $_SESSION['tema'];
+} else {
+  $tema = "claro"; // Tema por defecto
+}
+
+echo '<link rel="stylesheet" href="' . $tema . '.css">';
+Use code with caution.
+
+4. Crear las hojas de estilo básicas:
+
+Crea dos archivos CSS, claro.css y oscuro.css, que definan los estilos básicos para cada tema. Puedes empezar con estilos simples para el fondo, el color de texto, los encabezados y otros elementos básicos de la página.
+
+Ejemplo de claro.css:
+
+CSS
+body {
+  background-color: #ffffff;
+  color: #333333;
+}
+
+h1, h2, h3 {
+  color: #000000;
+}
+Use code with caution.
+
+Ejemplo de oscuro.css:
+
+CSS
+body {
+  background-color: #222222;
+  color: #ffffff;
+}
+
+h1, h2, h3 {
+  color: #dddddd;
+}
+Use code with caution.
+
+Consideraciones adicionales:
+
+Podemos ampliar la selección de temas en el futuro, agregando más opciones como "contraste alto" o "sepia".
+Podemos usar frameworks CSS como Bootstrap o Materialize para facilitar la creación de temas con estilos más complejos.
+Es importante que las hojas de estilo sean ligeras y eficientes para no afectar el rendimiento de la página.
 
 
-Perfil del Artista: Un espacio personalizado para que los usuarios carguen y compartan su propia obra, conecten con otros artistas y reciban feedback de la comunidad.
+## Perfil del Artista: 
+
+Un espacio personalizado para que los usuarios carguen y compartan su propia obra, conecten con otros artistas y reciban feedback de la comunidad.
 Estudio Creativo: Herramientas de edición y funciones que permiten a los artistas mejorar y presentar su trabajo de manera única.
+
+A considerar: Se acuerdan de MySpace? había mucha personalización. Eso me agrada. Y a la vez estoy casado con la idea de lo limpio y simple (Vgr. Wikipedia) ¡Tengo un corazón divido!
+
 ## Unirme:
 
 Registro de Nuevos Usuarios: Un proceso sencillo para que nuevos creativos se unan a la comunidad PicturaVibe y comiencen a compartir su arte.
