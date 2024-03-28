@@ -19,6 +19,8 @@ if (isset($_SESSION['tema'])) {
   
   echo '<link rel="stylesheet" href="' . $tema . '.css">';
 
+  
+
 // Obtener la fecha y hora actual para la cookie
 $fecha_hora_actual = date('Y-m-d H:i:s');
 
@@ -57,20 +59,20 @@ setcookie('ultima_sesion', $fecha_hora_actual, time() + 3600); // Expira en 1 ho
     // Procesar las preferencias del usuario
     if (isset($_POST['submit'])) {
 
-      // Estilo musical
-      if (isset($_POST['estilo_musical'])) {
-        $estilo_musical = $_POST['estilo_musical'];
-      }
+          // Estilo musical
+        if (isset($_POST['estilo_musical'])) {
+          $_SESSION['estilo_musical'] = $_POST['estilo_musical'];
+        }
 
-      // Estilo audiovisual
-      if (isset($_POST['estilo_audiovisual'])) {
-        $estilo_audiovisual = $_POST['estilo_audiovisual'];
-      }
+        // Estilo audiovisual
+        if (isset($_POST['estilo_audiovisual'])) {
+          $_SESSION['estilo_audiovisual'] = $_POST['estilo_audiovisual'];
+        }
 
-      // Otras áreas de interés
-      if (isset($_POST['otras_areas_interes'])) {
-        $otras_areas_interes = $_POST['otras_areas_interes'];
-      }
+        // Otras áreas de interés
+        if (isset($_POST['otras_areas_interes'])) {
+          $_SESSION['otras_areas_interes'] = $_POST['otras_areas_interes'];
+        }
 
       // Guardar las preferencias del usuario en la base de datos
       // ...
@@ -82,19 +84,19 @@ setcookie('ultima_sesion', $fecha_hora_actual, time() + 3600); // Expira en 1 ho
     ?>
     <p>Tema: <?php echo $tema; ?></p>
     <p>Estilo musical:</p>
-      <?php foreach ($estilo_musical as $musica) { ?>
-          <p><?php echo $musica; ?></p>
-      <?php } ?>
+        <?php foreach ($_SESSION['estilo_musical'] as $musica) { ?>
+            <p><?php echo $musica; ?></p>
+        <?php } ?>
 
-      <p>Estilo audiovisual:</p>
-      <?php foreach ($estilo_audiovisual as $audiovisual) { ?>
-          <p><?php echo $audiovisual; ?></p>
-      <?php } ?>
+        <p>Estilo audiovisual:</p>
+        <?php foreach ($_SESSION['estilo_audiovisual'] as $audiovisual) { ?>
+            <p><?php echo $audiovisual; ?></p>
+        <?php } ?>
 
-      <p>Áreas de interés:</p>
-      <?php foreach ($otras_areas_interes as $area) { ?>
-          <p><?php echo $area; ?></p>
-      <?php } ?>
+        <p>Áreas de interés:</p>
+        <?php foreach ($_SESSION['otras_areas_interes'] as $area) { ?>
+            <p><?php echo $area; ?></p>
+        <?php } ?>
 
     <form action="cerrar_sesion.php" method="post">
         <button type="submit">Cerrar sesión</button>
