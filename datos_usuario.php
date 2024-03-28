@@ -50,9 +50,9 @@ setcookie('ultima_sesion', $fecha_hora_actual, time() + 3600); // Expira en 1 ho
     <?php
 
     // Definir arrays para almacenar las preferencias del usuario
-    $estilo_musical = array();
-    $estilo_audiovisual = array();
-    $otras_areas_interes = array();
+    $estilo_musical = [];
+    $estilo_audiovisual = [];
+    $otras_areas_interes = [];
 
     // Procesar las preferencias del usuario
     if (isset($_POST['submit'])) {
@@ -80,6 +80,10 @@ setcookie('ultima_sesion', $fecha_hora_actual, time() + 3600); // Expira en 1 ho
     }
 
     ?>
+    <p>Tema: <?php echo $tema; ?></p>
+    <p>Estilo musical: <?php echo $estilo_musical; ?></p>
+    <p>Estilo audiovisual: <?php echo $estilo_audiovisual; ?></p>
+    <p>Áreas de interés: <?php echo $otras_areas_interes; ?></p>
 
     <form action="cerrar_sesion.php" method="post">
         <button type="submit">Cerrar sesión</button>
