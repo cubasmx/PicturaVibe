@@ -23,6 +23,10 @@
         <label for="tema-claro">Tema claro</label><br>
         <input type="radio" name="tema" value="oscuro" id="tema-oscuro">
         <label for="tema-oscuro">Tema oscuro</label><br>
+        <input type="radio" name="tema" value="sepia" id="tema-sepia">
+        <label for="tema-sepia">Tema sepia</label><br>
+        <input type="radio" name="tema" value="alto_contraste" id="tema-alto-contraste">
+        <label for="tema-alto-contraste">Tema alto contraste</label><br>
         <br><br>
         <input type="submit" value="Enviar">
     </form>
