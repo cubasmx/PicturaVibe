@@ -81,9 +81,20 @@ setcookie('ultima_sesion', $fecha_hora_actual, time() + 3600); // Expira en 1 ho
 
     ?>
     <p>Tema: <?php echo $tema; ?></p>
-    <p>Estilo musical: <?php echo $estilo_musical; ?></p>
-    <p>Estilo audiovisual: <?php echo $estilo_audiovisual; ?></p>
-    <p>Áreas de interés: <?php echo $otras_areas_interes; ?></p>
+    <p>Estilo musical:</p>
+      <?php foreach ($estilo_musical as $musica) { ?>
+          <p><?php echo $musica; ?></p>
+      <?php } ?>
+
+      <p>Estilo audiovisual:</p>
+      <?php foreach ($estilo_audiovisual as $audiovisual) { ?>
+          <p><?php echo $audiovisual; ?></p>
+      <?php } ?>
+
+      <p>Áreas de interés:</p>
+      <?php foreach ($otras_areas_interes as $area) { ?>
+          <p><?php echo $area; ?></p>
+      <?php } ?>
 
     <form action="cerrar_sesion.php" method="post">
         <button type="submit">Cerrar sesión</button>
