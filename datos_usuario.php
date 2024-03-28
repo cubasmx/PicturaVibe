@@ -11,10 +11,6 @@ $_SESSION['tema'] = $_POST['tema'];
 
 //Seleccionar tema
 
-// if (isset($_POST['tema'])) {
-//     $_SESSION['tema'] = $_POST['tema'];
-//   }
-
 if (isset($_SESSION['tema'])) {
     $tema = $_SESSION['tema'];
   } else {
@@ -51,6 +47,39 @@ setcookie('ultima_sesion', $fecha_hora_actual, time() + 3600); // Expira en 1 ho
     ?>
 
     <p>Tiempo desde el último inicio de sesión: <?php echo $tiempo_transcurrido; ?></p>
+    <?php
+
+    // Definir arrays para almacenar las preferencias del usuario
+    $estilo_musical = array();
+    $estilo_audiovisual = array();
+    $otras_areas_interes = array();
+
+    // Procesar las preferencias del usuario
+    if (isset($_POST['submit'])) {
+
+      // Estilo musical
+      if (isset($_POST['estilo_musical'])) {
+        $estilo_musical = $_POST['estilo_musical'];
+      }
+
+      // Estilo audiovisual
+      if (isset($_POST['estilo_audiovisual'])) {
+        $estilo_audiovisual = $_POST['estilo_audiovisual'];
+      }
+
+      // Otras áreas de interés
+      if (isset($_POST['otras_areas_interes'])) {
+        $otras_areas_interes = $_POST['otras_areas_interes'];
+      }
+
+      // Guardar las preferencias del usuario en la base de datos
+      // ...
+
+      // Mostrar un mensaje de confirmación al usuario
+      echo "Tus preferencias se han guardado correctamente.";
+    }
+
+    ?>
 
     <form action="cerrar_sesion.php" method="post">
         <button type="submit">Cerrar sesión</button>
